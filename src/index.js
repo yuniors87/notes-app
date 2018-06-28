@@ -1,9 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import style from './index.css';
+import App from './app'
 
-const Index = () => {
-  return <div className={style.titulo}>Hola mundo2</div>;
-};
-
-ReactDOM.render(<Index />, document.getElementById('index'));
+ReactDOM.render(<App />, document.getElementById('index'));
