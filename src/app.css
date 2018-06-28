@@ -1,4 +1,12 @@
-.titulo {
-  color: red;
-  background: yellow;
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+:root {
+  --main-bg-color: #65c0ba;
+  --nota-bg-colot: #eeeeee;
+  --main-font-color: #1b3c59;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.body {
+  margin: 0;
+  padding: 0;
 }
