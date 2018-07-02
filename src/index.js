@@ -1,9 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import style from './index.css';
+import ApolloClient from 'apollo-boost';
+import { ApolloProvider } from 'react-apollo';
+import { BrowserRouter } from 'react-router-dom';
+import App from './app';
 
-const Index = () => {
-  return <div className={style.titulo}>Hola mundo2</div>;
+const client = new ApolloClient({
+  uri: 'https://notes-app-server.herokuapp.com/graphql'
+});
+
+const Root = () => {
+  return (
+    <ApolloProvider client={client}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </ApolloProvider>
+  );
 };
 
-ReactDOM.render(<Index />, document.getElementById('index'));
+ReactDOM.render(<Root />, document.getElementById('index'));

@@ -1,0 +1,21 @@
+.header {
+  max-width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background: var(--main-bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__link {
+  color: #fff;
+  display: inline-block;
+  padding: 10px 15px;
+  line-height: 1;
+  text-decoration: none;
+  border-radius: 2px;
+}
+.header__link:hover {
+  box-shadow: 0 0 0 1px #fff;
+}
