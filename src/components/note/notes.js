@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import styles from './main.css';
+import styles from './notes.css';
 import Nota from './nota';
 
-class Main extends Component {
+class Notes extends Component {
   render() {
     return (
       <div className={styles.main}>
@@ -21,4 +21,4 @@ class Main extends Component {
   }
 }
 
-export default Main;
+export default Notes;
