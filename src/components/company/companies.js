@@ -1,16 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { gql } from 'apollo-boost';
 import { graphql } from 'react-apollo';
+import styles from './companies.css'
+import {getCompaniesQuery} from '../../queries/company'
 
-const getCompaniesQuery = gql`
-  {
-    companies {
-      id
-      name
-    }
-  }
-`;
 
 class Companies extends Component {
   displayCompanies() {
@@ -19,16 +12,16 @@ class Companies extends Component {
       return <div>Loading companies</div>;
     } else {
       return data.companies.map(company => {
-        return <li key={company.id}>{company.name}</li>;
+        return <li className={styles.list__item} key={company.id}>{company.name}</li>;
       });
     }
   }
   render() {
     return (
       <div>
-        <Link to="/company">Register new company</Link>
-        <div>Current companies</div>
-        <ul>{this.displayCompanies()}</ul>
+        <Link className={[styles.btn]} to="/company">Register new company</Link>
+        <div className={styles.subtitle}>Companies</div>
+        <ul className={styles.list}>{this.displayCompanies()}</ul>
       </div>
     );
   }
