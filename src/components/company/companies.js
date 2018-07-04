@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { graphql } from 'react-apollo';
-import styles from './companies.css'
-import {getCompaniesQuery} from '../../queries/company'
-
+import { getCompaniesQuery } from '../../queries/company';
+import List from '../ui/list';
+import ListItem from '../ui/listItem';
+import Button from '../ui/button';
+import Subtitle from '../ui/subtitle';
 
 class Companies extends Component {
   displayCompanies() {
@@ -12,16 +13,16 @@ class Companies extends Component {
       return <div>Loading companies</div>;
     } else {
       return data.companies.map(company => {
-        return <li className={styles.list__item} key={company.id}>{company.name}</li>;
+        return <ListItem key={company.id}>{company.name}</ListItem>;
       });
     }
   }
   render() {
     return (
       <div>
-        <Link className={[styles.btn]} to="/company">Register new company</Link>
-        <div className={styles.subtitle}>Companies</div>
-        <ul className={styles.list}>{this.displayCompanies()}</ul>
+        <Subtitle subtitle="Companies" />
+        <Button to="/company" tag="Register new company" />
+        <List>{this.displayCompanies()}</List>
       </div>
     );
   }
