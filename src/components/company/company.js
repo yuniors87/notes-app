@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { graphql, compose } from 'react-apollo';
 import { addCompanyMutation, getCompaniesQuery } from '../../queries/company';
+import Subtitle from '../ui/subtitle';
 
 class Company extends Component {
   constructor(props) {
@@ -27,7 +28,7 @@ class Company extends Component {
     }
     return (
       <div>
-        <div>Esto es para registrar las empresas</div>
+        <Subtitle subtitle="Register new company" />
         <form onSubmit={this.submitForm.bind(this)}>
           <div className="field">
             <label>Name:</label>
