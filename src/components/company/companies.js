@@ -21,7 +21,7 @@ class Companies extends Component {
     return (
       <div>
         <Subtitle subtitle="Companies" />
-        <Button to="/company" tag="Register new company" />
+        <Button  to="/company" tag="Register new company" />
         <List>{this.displayCompanies()}</List>
       </div>
     );
