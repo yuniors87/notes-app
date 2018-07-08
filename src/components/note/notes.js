@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import styles from './notes.css';
 import Nota from './nota';
 
 class Notes extends Component {
   render() {
     return (
-      <div className={styles.main}>
+      <div>
         <Nota />
         <Nota />
         <Nota />
