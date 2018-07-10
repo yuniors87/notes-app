@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import { Link } from 'react-router-dom';
 
-const Button3 = styled.button`
+const StyledButton = styled.button`
   font-size: 1rem;
   border-radius: 5px;
   padding: 0.25rem 1rem;
@@ -25,9 +25,12 @@ const Button3 = styled.button`
 
 const Button = props => {
   const { to, tag, primary } = props;
+  if (!to) {
+    return <StyledButton primary={primary}>{tag}</StyledButton>;
+  }
   return (
     <Link to={to}>
-      <Button3 primary={primary}>{tag}</Button3>
+      <StyledButton primary={primary}>{tag}</StyledButton>
     </Link>
   );
 };
