@@ -10,18 +10,30 @@ class Companies extends Component {
   displayCompanies() {
     let data = this.props.data;
     if (data.loading) {
-      return <div>Loading companies</div>;
+      return <div>Loading companies...</div>;
     } else {
-      return data.companies.map(company => {
+      return [...data.companies].sort(compare).map(company => {
         return <ListItem key={company.id}>{company.name}</ListItem>;
       });
+    }
+    function compare(a, b) {
+      const nameA = a.name.toUpperCase();
+      const nameB = b.name.toUpperCase();
+
+      let comparison = 0;
+      if (nameA > nameB) {
+        comparison = 1;
+      } else if (nameA < nameB) {
+        comparison = -1;
+      }
+      return comparison;
     }
   }
   render() {
     return (
       <div>
         <Subtitle subtitle="Companies" />
-        <Button  to="/company" tag="Register new company" />
+        <Button to="/company" tag="Register new company" />
         <List>{this.displayCompanies()}</List>
       </div>
     );

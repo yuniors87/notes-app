@@ -3,6 +3,7 @@ import { Link, Redirect } from 'react-router-dom';
 import { graphql, compose } from 'react-apollo';
 import { addCompanyMutation, getCompaniesQuery } from '../../queries/company';
 import Subtitle from '../ui/subtitle';
+import Button from '../ui/button';
 
 class Company extends Component {
   constructor(props) {
@@ -37,9 +38,9 @@ class Company extends Component {
               onChange={e => this.setState({ name: e.target.value })}
             />
           </div>
-          <button>Guardar</button>
+          <Button tag="Save" primary />
         </form>
-        <Link to="/companies">Back to list</Link>
+        <Button to="/companies" tag="Back to list" />
       </div>
     );
   }
