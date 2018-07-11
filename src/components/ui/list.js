@@ -10,13 +10,8 @@ const StyledList = styled.ul`
   border-right: none;
 `;
 
-const List = (props) => {
-  return (
-    <StyledList>
-    {props.children}
-
-    </StyledList>
-  );
+const List = props => {
+  return <StyledList>{props.children}</StyledList>;
 };
 
 export default List;
