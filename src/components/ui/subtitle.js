@@ -3,8 +3,9 @@ import styled from 'styled-components';
 
 const SubtitleStyled = styled.h2`
   font-size: 1.5rem;
-  text-decoration: underline;
+  font-weight: 400;
   margin: 5px 0;
+  border-bottom: 2px solid ${props => props.theme.dark};
 `;
 
 const Subtitle = props => {

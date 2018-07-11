@@ -4,6 +4,10 @@ import { graphql, compose } from 'react-apollo';
 import { addCompanyMutation, getCompaniesQuery } from '../../queries/company';
 import Subtitle from '../ui/subtitle';
 import Button from '../ui/button';
+import Form from '../ui/form';
+import Label from '../ui/label';
+import Imput from '../ui/input';
+import Input from '../ui/input';
 
 class Company extends Component {
   constructor(props) {
@@ -30,16 +34,15 @@ class Company extends Component {
     return (
       <div>
         <Subtitle subtitle="Register new company" />
-        <form onSubmit={this.submitForm.bind(this)}>
-          <div className="field">
-            <label>Name:</label>
-            <input
-              type="text"
-              onChange={e => this.setState({ name: e.target.value })}
-            />
-          </div>
-          <Button tag="Save" primary />
-        </form>
+        <Form>
+          <form onSubmit={this.submitForm.bind(this)}>
+            <div className="field">
+              <Label tag="Name:" />
+              <Input onChange={console.log('cambiado')} />
+            </div>
+            <Button tag="Save" primary />
+          </form>
+        </Form>
         <Button to="/companies" tag="Back to list" />
       </div>
     );
